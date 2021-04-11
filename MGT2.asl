@@ -7,7 +7,7 @@ state("Mad Games Tycoon 2")
 // Only for debugging reasons
 // update
 // {
-//   print("current money is : " + (current.money));
+//   print("current money is : " + (current.money) + " and splits is " + vars.splits);
 // }
 
 startup
@@ -24,36 +24,30 @@ start {
 
 split
 {
-  switch(vars.splits) {
-    case 0:
-      if(current.money > 1000000) {
-        vars.splits++;
-        return true;
-      }
-      break;
-    case 1:
-      if(current.money > 5000000) {
-        vars.splits++;
-        return true;
-      }
-      break;
-    case 2:
-      if(current.money > 10000000) {
-        vars.splits++;
-        return true;
-      }
-      break;
-    case 3:
-      if(current.money > 25000000) {
-        vars.splits++;
-        return true;
-      }
-      break;
-    case 4:
-      if(current.money > 50000000) {
-        vars.splits++;
-        return true;
-      }
-      break;
+  if(vars.splits == 0) {
+    if(current.money > 1000000) {
+      vars.splits++;
+      return true;
+    } 
+  } else if(vars.splits == 1) {
+    if(current.money > 5000000) {
+      vars.splits++;
+      return true;
+    } 
+  } else if(vars.splits == 2) {
+    if(current.money > 10000000) {
+      vars.splits++;
+      return true;
+    } 
+  } else if(vars.splits == 3) {
+    if(current.money > 25000000) {
+      vars.splits++;
+      return true;
+    } 
+  } else if(vars.splits == 4) {
+    if(current.money > 50000000) {
+      vars.splits++;
+      return true;
+    } 
   }
 }
